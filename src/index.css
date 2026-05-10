@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-midnight text-white font-sans antialiased selection:bg-neon-cyan/30 selection:text-white overflow-x-hidden;
+  }
+  section {
+    @apply scroll-mt-24;
+  }
+}
+
+@layer components {
+  .glass-premium {
+    @apply bg-white/[0.03] backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+
+  .glass-dark-premium {
+    @apply bg-black/40 backdrop-blur-3xl border border-white/[0.05] shadow-[0_8px_32px_0_rgba(0,0,0,0.8)];
+  }
+  
+  .glass {
+    @apply bg-white/[0.05] backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-2xl border border-white/5;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.4), 0 0 40px rgba(188, 19, 254, 0.2);
+  }
+
+  .cyan-glow {
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4), 0 0 40px rgba(0, 242, 255, 0.2);
+  }
+
+  .teal-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 195, 0.4), 0 0 40px rgba(0, 255, 195, 0.2);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/50;
+  }
+
+  .text-gradient-cyan {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan via-white to-neon-purple;
+  }
+
+  .luxury-gradient {
+    background: radial-gradient(circle at top right, rgba(188, 19, 254, 0.2), transparent),
+                radial-gradient(circle at bottom left, rgba(0, 242, 255, 0.15), transparent),
+                radial-gradient(circle at center, rgba(0, 255, 195, 0.05), transparent);
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background: linear-gradient(to right, #020205, #020205) padding-box,
+                linear-gradient(to right, rgba(188, 19, 254, 0.5), rgba(0, 242, 255, 0.5)) border-box;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-midnight;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-neon-cyan/40 transition-all duration-300;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.mask-gradient {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
